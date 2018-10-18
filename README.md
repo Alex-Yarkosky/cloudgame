@@ -17,5 +17,7 @@ The point system is a simplistic one based off of how many second you survive fo
 ## Download
 
 This repository can be downloaded from the terminal with the following command:
-`git clone https://github.com/Alex-Yarkosky/cloudgame.git`
+
+``git clone https://github.com/Alex-Yarkosky/cloudgame.git``
+
 Otherwise, you can manually download above as a ZIP file.

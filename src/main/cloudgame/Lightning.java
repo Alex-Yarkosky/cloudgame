@@ -15,7 +15,7 @@ public class Lightning {
    * final posY used to store the bolt's y location.
    * int newX used to create a new x location for a new bolt.
    * boolean alert used to know when to alert the user of an upcoming new bolt.
-   * final int DIAM used to define the diameter of the displayed warning arcs of upcoming bolts.
+   * final int diameter used to define the diameter of the displayed warning arcs of upcoming bolts.
    * Color col used to define the color of the bolt.
    */
   private int posX;
@@ -23,7 +23,7 @@ public class Lightning {
   private final int posY = 0;
   private int newX;
   private boolean alert;
-  private final int DIAM = 30;
+  private final int diameter = 30;
   private Color col;
 
   /** Instantiates the Lightning object with a random x location. */
@@ -46,7 +46,7 @@ public class Lightning {
   public void paint(Graphics graphics) {
     graphics.setColor(col);
     if (alert) {
-      graphics.fillArc(newX - DIAM / 2, posY - DIAM / 2, DIAM, DIAM, 180, 180);
+      graphics.fillArc(newX - diameter / 2, posY - diameter / 2, diameter, diameter, 180, 180);
     }
     graphics.fillRect(posX, posY, 10, 450);
   }

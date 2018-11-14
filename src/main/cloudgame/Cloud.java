@@ -14,8 +14,8 @@ public class Cloud {
    * Lightning lightning2 created to allow interactions between Cloud & Lightning classes.
    * int posX used to keep track of Cloud's x location.
    * final int posY used to define the Cloud's permanent y location.
-   * final int SPD used to change Cloud's x location.
-   * final int DIAM used to define the diameter of each circle
+   * final int speed used to change Cloud's x location.
+   * final int diameter used to define the diameter of each circle
    * used to create the entire Cloud object.
    * boolean isMoving used to determine if the user has begun the game
    * & therefore if the Cloud should be moving or not.
@@ -27,8 +27,8 @@ public class Cloud {
   private Lightning lightning2;
   private int posX;
   private final int posY = 250;
-  private final int SPD = 10;
-  private final int DIAM = 30;
+  private final int speed = 10;
+  private final int diameter = 30;
   private boolean isMoving;
   private int cloudSegments;
   private boolean immune;
@@ -61,25 +61,25 @@ public class Cloud {
   public void paint(Graphics graphics) {
     graphics.setColor(Color.WHITE);
     if (cloudSegments >= 1) {
-      graphics.fillOval(posX, posY, DIAM, DIAM);
+      graphics.fillOval(posX, posY, diameter, diameter);
     }
     if (cloudSegments >= 3) {
-      graphics.fillOval(posX + 15, posY - 15, DIAM, DIAM);
+      graphics.fillOval(posX + 15, posY - 15, diameter, diameter);
     }
     graphics.setColor(Color.GRAY);
     if (cloudSegments >= 2) {
-      graphics.fillOval(posX + 15, posY + 15, DIAM, DIAM);
+      graphics.fillOval(posX + 15, posY + 15, diameter, diameter);
     }
     graphics.setColor(Color.WHITE);
     if (cloudSegments >= 4) {
-      graphics.fillOval(posX + 30, posY, DIAM, DIAM);
+      graphics.fillOval(posX + 30, posY, diameter, diameter);
     }
     if (cloudSegments == 6) {
-      graphics.fillOval(posX + 45, posY - 15, DIAM, DIAM);
+      graphics.fillOval(posX + 45, posY - 15, diameter, diameter);
     }
     graphics.setColor(Color.GRAY);
     if (cloudSegments >= 5) {
-      graphics.fillOval(posX + 45, posY + 15, DIAM, DIAM);
+      graphics.fillOval(posX + 45, posY + 15, diameter, diameter);
     }
     if (!isMoving) {
       graphics.setColor(Color.YELLOW);
@@ -98,10 +98,10 @@ public class Cloud {
   public void move(int mouseX) {
     if (isMoving) {
       if (mouseX > posX) {
-        posX += SPD;
+        posX += speed;
       }
       if (mouseX < posX) {
-        posX -= SPD;
+        posX -= speed;
       }
     }
   }

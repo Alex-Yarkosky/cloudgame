@@ -16,8 +16,8 @@ import javax.swing.JPanel;
  */
 public class CloudGamePanel extends JPanel implements Runnable, MouseListener, MouseMotionListener {
   /**
-   * final int PANEL_WIDTH used to define how long the displayed window will be.
-   * final int PANEL_HEIGHT used to define how tall the displayed window will be.
+   * final int panelWidth used to define how long the displayed window will be.
+   * final int panelHeight used to define how tall the displayed window will be.
    * Thread thread used to start the game.
    * Cloud cloud used as the user controlled object in playing the game.
    * Lightning lightning1 used as an obstacle the user tries to avoid.
@@ -27,8 +27,8 @@ public class CloudGamePanel extends JPanel implements Runnable, MouseListener, M
    * int startTime used to store the starting time of the game & to determine the user's score.
    * int endTime used to store the end time of the game when & to determine the user's score.
    */
-  public final int PANEL_WIDTH = 800;
-  public final int PANEL_HEIGHT = 450;
+  public final int panelWidth = 800;
+  public final int panelHeight = 450;
   private Thread thread;
   private Cloud cloud;
   private Lightning lightning1;
@@ -52,7 +52,7 @@ public class CloudGamePanel extends JPanel implements Runnable, MouseListener, M
     this.addMouseMotionListener(this);
     this.addMouseListener(this);
     this.setBackground(Color.DARK_GRAY);
-    this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
+    this.setPreferredSize(new Dimension(panelWidth, panelHeight));
     thread = new Thread(this);
     thread.start();
   }

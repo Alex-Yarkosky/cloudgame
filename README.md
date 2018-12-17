@@ -1,6 +1,6 @@
 # Welcome to Cloud Game
 
-This repository started as a final project for a computer science class I took in eleventh grade a couple of years ago. It has uploaded into this repository for continued development to take place.
+This repository started as a final project for a computer science class I took in eleventh grade back in 2016. It has been uploaded into this repository for continued development to take place.
 
 ## The Premise
 

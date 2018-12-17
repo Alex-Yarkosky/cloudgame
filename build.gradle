@@ -20,7 +20,7 @@ wrapper {
 
 sourceSets {
   main.java.srcDir "src/main"
-  test.java.srcDir "src/test"
+  //test.java.srcDir "src/test"
 }
 
 // declare values to place in the manifest file in the JAR
@@ -46,5 +46,3 @@ checkstyle {
   maxErrors = 0
   configFile = new File(rootDir, "config/checkstyle/google_checks.xml")
 }
-
-// need anything else in this file?

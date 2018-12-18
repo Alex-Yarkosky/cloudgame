@@ -1,7 +1,6 @@
 language: java
 
 before_install:
-  - pip install --upgrade pip
   - pip install proselint
   - gem install mdl
 

@@ -1,0 +1,48 @@
+// available commands:
+// "gradle check": run checkstyle to assess code quality
+// "gradle clean": clean the project of all derived files
+// "gradle build": create the bytecode from the source code
+// "gradle run": run the program and produce output
+
+plugins {
+    id "java"
+}
+
+// declare the repositories that are used to meet dependencies
+repositories {
+  jcenter()
+}
+
+// specify the use of the gradle version
+wrapper {
+  gradleVersion = '4.9'
+}
+
+sourceSets {
+  main.java.srcDir "src/main"
+  //test.java.srcDir "src/test"
+}
+
+// declare values to place in the manifest file in the JAR
+jar {
+  manifest {
+    attributes(
+        'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+         'Main-Class': 'cloudgame.CloudGameMain'
+        )
+  }
+}
+
+// give the name of the application to run with "gradle run" command
+apply plugin: 'application'
+mainClassName = 'cloudgame.CloudGameMain'
+
+// perform checkstyle checking with the "gradle check" command
+apply plugin: 'checkstyle'
+checkstyle.toolVersion = '8.1'
+checkstyle {
+  ignoreFailures = false
+  maxWarnings = 0
+  maxErrors = 0
+  configFile = new File(rootDir, "config/checkstyle/google_checks.xml")
+}

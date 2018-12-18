@@ -1,4 +1,15 @@
 language: java
 
+before_install:
+  - pip install proselint
+  - gem install mdl
+
+notifications: 
+  - email: never
+  
 jdk:
-        - oraclejdk8
+  - oraclejdk8
+
+script:
+  - mdl README.md
+  - proselint README.md

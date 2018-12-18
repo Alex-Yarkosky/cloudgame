@@ -8,6 +8,8 @@ plugins {
     id "java"
 }
 
+sourceCompatibility = 1.8
+
 // declare the repositories that are used to meet dependencies
 repositories {
   jcenter()

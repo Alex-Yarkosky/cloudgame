@@ -7,9 +7,10 @@ before_install:
 notifications: 
   - email: never
   
-jdk:
-  - oraclejdk8
-
 script:
   - mdl README.md
   - proselint README.md
+
+jdk:
+  - oraclejdk8
+
